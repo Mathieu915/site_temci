@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useState } from "react";
-import logo from "../assets/img/logo_noir.png";
+import logo from "../assets/img/logo.png";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 
 const Navbar: FC = () => {
@@ -56,14 +56,10 @@ const Navbar: FC = () => {
                 <div className="hidden md:flex flex-1 justify-center">
                     <div className="flex space-x-20">
                         <a
-                            href="#presentation"
+                            href="/materiel"
                             className="link-underline cursor-pointer"
-                            onClick={(e) => {
-                                e.preventDefault();
-                                scrollToSection("presentation");
-                            }}
                         >
-                            Présentation
+                            Matériel
                         </a>
                         <a
                             href="#presentationPerso"
@@ -92,32 +88,32 @@ const Navbar: FC = () => {
                 <div className="hidden md:flex items-center gap-8">
                     <a
                         href="#contact"
-                        className="px-4 py-2 border border-black rounded-md text-black hover:bg-black hover:text-white transition-colors duration-300 cursor-pointer"
+                        className=" flex justify-center items-center px-4 py-1 font-semibold border border-[#b00000] bg-[#b00000] rounded-xl text-white hover:bg-white hover:text-[#b00000] transition-colors duration-300 cursor-pointer link-chevron"
                         onClick={(e) => {
                             e.preventDefault();
                             scrollToSection("contact");
                         }}
                     >
-                        Contactez-moi
+                        Devis gratuit
                     </a>
-                    <div className="flex space-x-8">
-                        <a
-                            href="https://www.facebook.com/share/1CUDV9tbBx/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:text-blue-600 transition-colors duration-300"
-                        >
-                            {FaFacebookF({ size: 20 })}
-                        </a>
-                        <a
-                            href="https://www.instagram.com/ludo_educateur_canin"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:text-pink-500 transition-colors duration-300"
-                        >
-                            {FaInstagram({ size: 20 })}
-                        </a>
-                    </div>
+                    {/*<div className="flex space-x-8">*/}
+                    {/*    <a*/}
+                    {/*        href="https://www.facebook.com/share/1CUDV9tbBx/"*/}
+                    {/*        target="_blank"*/}
+                    {/*        rel="noopener noreferrer"*/}
+                    {/*        className="hover:text-blue-600 transition-colors duration-300"*/}
+                    {/*    >*/}
+                    {/*        {FaFacebookF({ size: 20 })}*/}
+                    {/*    </a>*/}
+                    {/*    <a*/}
+                    {/*        href="https://www.instagram.com/ludo_educateur_canin"*/}
+                    {/*        target="_blank"*/}
+                    {/*        rel="noopener noreferrer"*/}
+                    {/*        className="hover:text-pink-500 transition-colors duration-300"*/}
+                    {/*    >*/}
+                    {/*        {FaInstagram({ size: 20 })}*/}
+                    {/*    </a>*/}
+                    {/*</div>*/}
                 </div>
 
                 {/* Burger mobile */}
@@ -192,24 +188,24 @@ const Navbar: FC = () => {
                     >
                         Contactez-moi
                     </a>
-                    <div className="flex w-full justify-center space-x-6 pt-4">
-                        <a
-                            href="https://www.facebook.com/share/1CUDV9tbBx/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:text-blue-600"
-                        >
-                            {FaFacebookF({ size: 20 })}
-                        </a>
-                        <a
-                            href="https://www.instagram.com/ludo_educateur_canin"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:text-pink-500"
-                        >
-                            {FaInstagram({ size: 20 })}
-                        </a>
-                    </div>
+                    {/*<div className="flex w-full justify-center space-x-6 pt-4">*/}
+                    {/*    <a*/}
+                    {/*        href="https://www.facebook.com/share/1CUDV9tbBx/"*/}
+                    {/*        target="_blank"*/}
+                    {/*        rel="noopener noreferrer"*/}
+                    {/*        className="hover:text-blue-600"*/}
+                    {/*    >*/}
+                    {/*        {FaFacebookF({ size: 20 })}*/}
+                    {/*    </a>*/}
+                    {/*    <a*/}
+                    {/*        href="https://www.instagram.com/ludo_educateur_canin"*/}
+                    {/*        target="_blank"*/}
+                    {/*        rel="noopener noreferrer"*/}
+                    {/*        className="hover:text-pink-500"*/}
+                    {/*    >*/}
+                    {/*        {FaInstagram({ size: 20 })}*/}
+                    {/*    </a>*/}
+                    {/*</div>*/}
                 </div>
             )}
         </nav>

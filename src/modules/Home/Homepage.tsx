@@ -15,12 +15,7 @@ const Homepage: FC = () => {
         <>
             <Navbar/>
             <Header/>
-            <Accroche/>
-            <PresentationPerso/>
             <Services/>
-            <Localisation/>
-            <Faq/>
-            <Contact/>
             <Footer/>
         </>
         

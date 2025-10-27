@@ -197,3 +197,15 @@ html {
   border: 2px solid #e5e7eb;
   transform: rotateX(180deg);
 }
+
+/*---------------*/
+
+.link-chevron::after {
+  content: "›";
+  margin-left: 0.4em;
+  font-size: 1.5em;
+  line-height: 1;
+  vertical-align: middle;
+  position: relative;
+  bottom: 0.08em;
+}

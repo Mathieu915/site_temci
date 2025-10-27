@@ -1,13 +1,15 @@
 import React from 'react';
 import './App.css';
-import { Route, HashRouter as Router, Routes } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Homepage from './modules/Home/Homepage';
+import Materiel from "./modules/Materiel/Materiel";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Homepage />} />
+          <Route path="/" element={<Homepage />} />
+          <Route path="/materiel" element={<Materiel />} />
       </Routes>
     </Router>
   );
