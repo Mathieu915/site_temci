@@ -13,12 +13,12 @@ interface PrestationsProps {
 const Prestation: React.FC<PrestationsProps> = ({ titre, sousTitre, texte, imageUrl, position }) => {
 
     return (
-        <div className="container flex flex-col md:flex-row">
+        <div className="container flex flex-col md:flex-row py-6 md:py-12">
             <div className="flex flex-col lg:grid lg:grid-cols-2 gap-y-4 gap-x-24" dir={position}>
                 <div className="flex flex-col justify-center gap-y-6 lg:gap-y-12">
                     <h2 className="text-center text-[#017F7F] text-3xl font-semibold">{titre}</h2>
                     <span className="text-center font-semibold text-2xl italic">{sousTitre}</span>
-                    <p className="font-serif font-normal leading-normal text-lg lg:text-xl ">
+                    <p className="font-serif font-normal leading-normal text-lg lg:text-xl text-left">
                         {texte}
                     </p>
                 </div>

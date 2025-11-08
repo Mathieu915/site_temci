@@ -27,19 +27,13 @@ const Localisation: FC = () => {
     return (
         <>
             <div id="localisation" className="container flex flex-col py-12 gap-6 md:gap-12">
-                <h2 className="font-serif text-3xl lg:text-5xl leading-none ">
-                    Où me trouver ?
+                <h2 className="font-serif text-3xl lg:text-5xl leading-none text-center ">
+                    Notre secteur d'intervention
                 </h2>
                 <div className="flex flex-col lg:grid lg:grid-cols-2 gap-y-4 gap-x-8"  dir="ltr">
                     <div className="flex flex-col justify-center gap-y-6 lg:gap-y-12 text-left lg:w-3/4" dir="ltr">
                         <p className="font-serif font-normal leading-normal text-lg lg:text-xl ">
-                            Je me déplace dans le secteur du sud/milieu de l’Essonne, dans les villes indiquées sur la carte ci-dessous.
-                        </p>
-                        <h3 className="font-serif font-light text-2xl lg:text-4xl leading-none ">
-                            Et au-delà ?
-                        </h3>
-                        <p className="font-serif font-normal leading-normal text-lg lg:text-xl ">
-                            Si vous êtes en dehors de ma zone indiquée sur la carte, contactez-moi pour voir si je peux me déplacer. Des frais kilométriques peuvent s’appliquer.
+                            Lorem ipsum dolor sit amet consectetur adipiscing elit mauris, erat nisl nunc ac nibh fusce ullamcorper facilisis felis, sodales donec semper eget magnis arcu conubia. Facilisi mi enim viverra dapibus justo vivamus urna, ornare tristique rhoncus cubilia in sapien cum, posuere porta imperdiet facilisis nullam senectus. Habitasse aenean dapibus rutrum platea fames accumsan litora mollis, diam tellus quam vivamus class parturient magnis congue, suspendisse integer consequat vulputate pharetra porttitor dignissim.
                         </p>
                     </div>
                     <div>

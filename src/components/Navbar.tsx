@@ -40,13 +40,8 @@ const Navbar: FC = () => {
                 {/* Logo */}
                 <div className="flex-shrink-0">
                     <a
-                        href="#header"
-                        className="link-underline cursor-pointer"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            scrollToSection("header");
-                            setIsMenuOpen(false);
-                        }}
+                        href="/"
+                        className="cursor-pointer"
                     >
                         <img src={logo} alt="Logo" className="h-20 w-auto" />
                     </a>
@@ -62,24 +57,22 @@ const Navbar: FC = () => {
                             Matériel
                         </a>
                         <a
-                            href="#presentationPerso"
+                            href="/prestations"
                             className="link-underline cursor-pointer"
-                            onClick={(e) => {
-                                e.preventDefault();
-                                scrollToSection("presentationPerso");
-                            }}
                         >
-                            Me connaître
+                            Nos Prestations
                         </a>
                         <a
-                            href="#services"
+                            href="/qualifications"
                             className="link-underline cursor-pointer"
-                            onClick={(e) => {
-                                e.preventDefault();
-                                scrollToSection("services");
-                            }}
                         >
-                            Mes services
+                            Qualifications
+                        </a>
+                        <a
+                            href="/contact"
+                            className="link-underline cursor-pointer"
+                        >
+                            Contact
                         </a>
                     </div>
                 </div>

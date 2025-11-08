@@ -4,6 +4,7 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import fond from "../../assets/img/9.jpg";
 import Prestation from "../../components/Prestation";
+import HeaderGenerique from "../../components/HeaderGenerique";
 
 
 
@@ -30,11 +31,35 @@ const Materiel: FC = () => {
             imageUrl: fond
         },
         {
+            titre: "Ballon thermodynamique",
+            sousTitre: "Eau chaude économique et écologique",
+            texte: "Le ballon thermodynamique capte les calories présentes dans l’air pour chauffer votre eau sanitaire de façon économique et durable. Cette solution écologique réduit votre facture d’énergie tout en garantissant un confort quotidien.",
+            imageUrl: fond
+        },
+        {
             titre: "Plancher chauffant",
             sousTitre: "Le confort absolu, sans radiateurs visibles",
             texte: "Offrez à votre intérieur une chaleur douce et uniforme grâce au plancher chauffant. Economique, discret et performant, ce système s’intègre parfaitement à toutes les pièces et améliore votre confort thermique tout en réduisant vos factures d’énergie.",
             imageUrl: fond
         },
+        {
+            titre: "Climatisation de précision",
+            sousTitre: "Stabilité et fiabilité 24h/24",
+            texte: "La climatisation de précision est conçue pour garantir une régulation fine de la température, de l’hygrométrie et du débit d’air. Idéale pour le salles informatiques, laboratoires, centres de données et environnements techniques, elle offre une fiabilité continue et une consommation énergétique optimisée.",
+            imageUrl: fond
+        },
+        {
+            titre: "Déshumidificateur de piscine",
+            sousTitre: "Protégez votre local et respirer un air sain",
+            texte: "Déshumidificateur de piscine : protégez votre local et respirez un air sain. Evitez la condensation, la corrosion et les moisissures grâce à une solution performante et silencieuse. Idéal pour les piscines intérieures, spas et espaces bien-être.",
+            imageUrl: fond
+        },
+        {
+            titre: "Centrale double-flux",
+            sousTitre: "Ventilation performante et économies d’énergie",
+            texte: "Améliorez le confort de votre maison ou de vos locaux avec une centrale de ventilation double flux. Ce système récupère la chaleur de l’air extrait, filtre l’air entrant et réduit condisérablement les déperditions thermiques. Un air sain, une température maîtrisée et des économies sur votre facture énergétique.",
+            imageUrl: fond
+        }
     ];
 
     const presta2 = [
@@ -89,17 +114,19 @@ const Materiel: FC = () => {
     return (
         <>
             <Navbar/>
-            <Services/>
-            {presta1.map((presta, index) => (
-                <Prestation
-                    key={index}
-                    titre={presta.titre}
-                    sousTitre={presta.sousTitre}
-                    texte={presta.texte}
-                    imageUrl={presta.imageUrl}
-                    position={index % 2 === 0 ? 'ltr' : 'rtl'}
-                />
-            ))}
+            <HeaderGenerique titre={"Matériel"} sousTitre={"Phrase d'accroche pour la page matériel"} image={fond}/>
+            <div className="md:pt-24">
+                {presta1.map((presta, index) => (
+                    <Prestation
+                        key={index}
+                        titre={presta.titre}
+                        sousTitre={presta.sousTitre}
+                        texte={presta.texte}
+                        imageUrl={presta.imageUrl}
+                        position={index % 2 === 0 ? 'ltr' : 'rtl'}
+                    />
+                ))}
+            </div>
             <Footer/>
         </>
 

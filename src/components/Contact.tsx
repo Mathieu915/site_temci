@@ -57,43 +57,32 @@ const Contact: FC = () => {
     };
 
     return (
-        <div className="bg-[#e6d5b9]">
-            <div id="contact" className="container py-12 grid grid-cols-1 md:grid-cols-3 gap-12">
-                <div className="px-8 py-8 rounded-xl bg-[#dec499] flex flex-col gap-6">
-                    <h2 className=" text-3xl lg:text-4xl font-semibold">Contactez-moi !</h2>
-                    <span className="text-lg">
-                        J'interviens en Île-de-France, pour plus d'informations n'hésitez pas à me contacter.
+        <div className="">
+            <div id="contact" className="container py-12 grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
+                <div className="px-8 rounded-xl flex flex-col gap-6">
+                    <h2 className="text-xl lg:text-2xl text-[#017F7F] font-semibold">Pourquoi choisir notre société TEMCI :</h2>
+                    <ul className="text-lg lg:text-xl list-disc list-outside ml-4">
+                        <li className="mb-2"><strong>Plus de 20 ans d'expérience</strong> dans le domaine des pompes à chaleur et de la climatisation</li>
+                        <li className="mb-2"><strong>Installation sur mesure,</strong> adaptée à vos besoins, à votre logement ou local professionnel</li>
+                        <li className="mb-2"><strong>Service après-vente réactif</strong> et contrat d'entretien possible</li>
+                        <li className="mb-2"><strong>Certification RGE,</strong> gage de qualité et d'éligibilité aux aides</li>
+                    </ul>
+
+                    <h2 className="text-xl lg:text-2xl text-[#017F7F] font-semibold">Alors n'hésitez plus :</h2>
+                    <p className="text-lg lg:text-xl">
+                        Remplissez le formulaire ou appelez-nous pour que l'on réponde à vos attentes !
+                    </p>
+                    <a className="text-3xl lg:text-4xl text-center font-semibold" href="tel:0164947536">01 64 94 75 36</a>
+                    <span className="text-xl lg:text-2xl text-center">
+                        1 rue du 19 mars 1962
+                        <br/>
+                        91150 MORIGNY CHAMPIGNY
                     </span>
-                    <div className="flex gap-4 items-center text-xl font-bold">
-                        {FaPhone({ style: { transform: 'scaleX(-1)' } })}
-                        <a href="tel:0681745681" className="phone-link">
-                            06 81 74 56 81
-                        </a>
-                    </div>
-                    <img src={logo} alt="Logo" className="h-40 w-auto mx-auto" />
-                    <div className="flex flex-col gap-6">
-                        <h3 className="text-xl font-semibold">Suivez-moi sur les réseaux !</h3>
-                        <span className="font-serif font-semibold text-xl">
-                            Instagram : <a className="font-normal" href="https://www.instagram.com/ludo_educateur_canin?igsh=MW55YzU5bGFsaW9sbw==">Ludovic Clavié - Éducateur Comportementaliste Canin</a>
-                        </span>
-                        <span className="font-serif font-semibold text-xl">
-                            Facebook : <a className="font-normal" href="https://www.facebook.com/share/1CUDV9tbBx/">Ludovic Clavié</a>
-                        </span>
-                    </div>
+                    <a className="text-xl lg:text-2xl text-center" href="mailto:sarl.temci@orange.fr">sarl.temci@orange.fr</a>
                 </div>
-                <div className="md:col-span-2 md:w-3/4">
+                <div className="">
                     <form onSubmit={handleSubmit} className="space-y-4">
-                        <div>
-                            <label className="block text-sm font-medium">Prénom</label>
-                            <input
-                                type="text"
-                                name="firstname"
-                                value={formData.firstname}
-                                onChange={handleChange}
-                                required
-                                className="mt-1 w-full border border-gray-300 rounded px-3 py-2 !bg-white"
-                            />
-                        </div>
+                        <h2 className="text-xl lg:text-2xl text-[#b00000] font-semibold">Contactez nous</h2>
                         <div>
                             <label className="block text-sm font-medium">Nom</label>
                             <input
@@ -103,6 +92,17 @@ const Contact: FC = () => {
                                 onChange={handleChange}
                                 required
                                 className="mt-1 w-full border border-gray-300 rounded px-3 py-2"
+                            />
+                        </div>
+                        <div>
+                            <label className="block text-sm font-medium">Prénom</label>
+                            <input
+                                type="text"
+                                name="firstname"
+                                value={formData.firstname}
+                                onChange={handleChange}
+                                required
+                                className="mt-1 w-full border border-gray-300 rounded px-3 py-2 !bg-white"
                             />
                         </div>
                         <div>
@@ -128,7 +128,7 @@ const Contact: FC = () => {
                             />
                         </div>
                         <div>
-                            <label className="block text-sm font-medium">Message</label>
+                            <label className="block text-sm font-medium">Commentaire</label>
                             <textarea
                                 name="message"
                                 rows={6}
@@ -138,12 +138,14 @@ const Contact: FC = () => {
                                 className="mt-1 w-full border border-gray-300 rounded px-3 py-2"
                             ></textarea>
                         </div>
-                        <button
-                            type="submit"
-                            className="w-full bg-[#dec499] py-2 px-4 rounded hover:bg-[#e8d59b]"
-                        >
-                            Envoyer
-                        </button>
+                        <div>
+                            <button
+                                type="submit"
+                                className="flex justify-center items-center px-4 py-3 font-semibold border border-[#b00000] bg-[#b00000] rounded-xl text-white hover:bg-white hover:text-[#b00000] transition-colors duration-300 cursor-pointer"
+                            >
+                                Envoyer
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>

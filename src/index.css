@@ -209,3 +209,18 @@ html {
   position: relative;
   bottom: 0.08em;
 }
+
+.continuous-swiper .swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+
+.continuous-swiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.continuous-swiper .swiper-slide img {
+  height: auto;
+  object-fit: contain;
+}
