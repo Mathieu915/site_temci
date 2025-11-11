@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import logo from "../assets/img/logo.png";
-import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import {FaEnvelope, FaFacebookF, FaInstagram, FaPhone} from "react-icons/fa";
 
 const Navbar: FC = () => {
     const location = useLocation(); // récupère le chemin actuel
@@ -60,12 +60,22 @@ const Navbar: FC = () => {
 
                 {/* Boutons Desktop */}
                 <div className="hidden md:flex items-center gap-8">
+
+                    <div className="hidden md:flex flex-col items-start gap-2 text-gray-700 text-sm">
+                        <a href="tel:0164947536" className="flex items-center gap-2 hover:text-teal-700">
+                            {FaPhone({ size: 15, style: { transform: 'scaleX(-1)' } })} 01 64 94 75 36
+                        </a>
+                        <a href="mailto:sarl.temci@orange.fr" className="flex items-center gap-2 hover:text-teal-700">
+                            {FaEnvelope({ size: 15 })} sarl.temci@orange.fr
+                        </a>
+                    </div>
                     <a
                         href="/site_temci/contact"
                         className="flex justify-center items-center px-4 py-1 font-semibold border border-[#b00000] bg-[#b00000] rounded-xl text-white hover:bg-white hover:text-[#b00000] transition-colors duration-300 cursor-pointer link-chevron"
                     >
                         Devis gratuit
                     </a>
+
                 </div>
 
                 {/* Burger mobile */}

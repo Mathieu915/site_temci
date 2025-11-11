@@ -12,8 +12,8 @@ interface AutoSwiperProps {
 }
 const AutoSwiper: React.FC<AutoSwiperProps> = ({titre, sousTitre, images}) => {
     return (
-        <>
-            <div className="container text-center py-6 md:py-12">
+        <div className="py-6 md:py-12">
+            <div className="container text-center">
                 <h2 className="text-center text-[#017F7F] text-2xl lg:text-4xl font-semibold mb-4 md:mb-8">{titre}</h2>
                 <span className="text-center font-semibold text-2xl italic">{sousTitre}</span>
             </div>
@@ -45,7 +45,7 @@ const AutoSwiper: React.FC<AutoSwiperProps> = ({titre, sousTitre, images}) => {
                     </SwiperSlide>
                 ))}
             </Swiper>
-        </>
+        </div>
     );
 };
 
