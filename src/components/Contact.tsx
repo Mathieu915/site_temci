@@ -59,7 +59,7 @@ const Contact: FC = () => {
     return (
         <div className="">
             <div id="contact" className="container py-12 grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
-                <div className="px-8 rounded-xl flex flex-col gap-6">
+                <div className="px-4 lg:pl-0 lg:pr-12 rounded-xl flex flex-col gap-6">
                     <h2 className="text-xl lg:text-2xl text-[#017F7F] font-semibold">Pourquoi choisir notre société TEMCI :</h2>
                     <ul className="text-lg lg:text-xl list-disc list-outside ml-4">
                         <li className="mb-2"><strong>Plus de 20 ans d'expérience</strong> dans le domaine des pompes à chaleur et de la climatisation</li>

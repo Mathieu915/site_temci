@@ -1,9 +1,10 @@
 import React, { FC, useEffect } from "react";
 import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
-import 'leaflet/dist/leaflet.css';
+import "leaflet/dist/leaflet.css";
 import L from "leaflet";
+import { motion } from "framer-motion";
 
-// Optionnel : corrige l’icône par défaut (sinon le pin ne s’affiche pas dans certains environnements)
+// Corrige l’icône par défaut
 import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
 import markerIcon from "leaflet/dist/images/marker-icon.png";
 import markerShadow from "leaflet/dist/images/marker-shadow.png";
@@ -16,7 +17,6 @@ L.Icon.Default.mergeOptions({
 });
 
 const LocalisationPin: FC = () => {
-    // Coordonnées du point précis (par ex. Évry, Essonne)
     const essonnePoint: [number, number] = [48.422449, 2.224192];
 
     function SetView({ coords, zoom }: { coords: [number, number]; zoom: number }) {
@@ -28,37 +28,63 @@ const LocalisationPin: FC = () => {
     }
 
     return (
-        <div id="localisation" className="container flex flex-col py-12 gap-6 md:gap-12">
+        <div
+            id="localisation"
+            className="container flex flex-col py-12 gap-6 md:gap-12 overflow-x-hidden"
+        >
             <div className="flex flex-col lg:grid lg:grid-cols-2 gap-y-4 gap-x-8" dir="ltr">
-                <div className="flex flex-col justify-center gap-y-6 lg:gap-y-12 text-left lg:w-3/4" dir="ltr">
+                {/* Bloc texte avec animation */}
+                <motion.div
+                    initial={{ opacity: 0, x: -100 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    viewport={{ once: true, amount: 0.4 }}
+                    className="flex flex-col justify-center gap-y-6 lg:gap-y-12 text-left lg:w-3/4"
+                >
                     <h2 className="text-center text-[#017F7F] text-3xl font-semibold lg:mb-3">
                         Où nous trouver ?
                     </h2>
-                    <p className="font-serif font-normal leading-normal text-lg lg:text-xl ">
-                        Nous sommes situés dans le Sud-Essonne a proximité d'Étampes. Retrouvez nos services et notre rayon d'intervention <a className="text-[#017F7F] underline" href="/site_temci/prestations">ici</a>.
+                    <p className="font-serif font-normal leading-normal text-lg lg:text-xl">
+                        Nous sommes situés dans le Sud-Essonne à proximité d'Étampes. Retrouvez nos
+                        services et notre rayon d'intervention{" "}
+                        <a className="text-[#017F7F] underline" href="/site_temci/prestations">
+                            ici
+                        </a>
+                        .
                     </p>
-                </div>
-                <div>
-                    <div className="mx-auto relative z-0">
-                        <div
-                            style={{
-                                width: "100%",
-                                height: "400px",
-                                borderRadius: "8px",
-                                overflow: "hidden",
-                                boxShadow: "0 0 10px rgba(0,0,0,0.1)",
-                            }}
+                </motion.div>
+
+                {/* Bloc map avec animation sur le wrapper */}
+                <motion.div
+                    initial={{ opacity: 0, x: 100 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    viewport={{ once: true, amount: 0.4 }}
+                    className="flex justify-center"
+                >
+                    <div
+                        style={{
+                            width: "100%",
+                            height: "400px",
+                            borderRadius: "8px",
+                            overflow: "hidden",
+                            boxShadow: "0 0 10px rgba(0,0,0,0.1)",
+                        }}
+                    >
+                        <MapContainer
+                            style={{ height: "400px", width: "100%" }}
+                            center={essonnePoint}
+                            zoom={12}
+                            scrollWheelZoom={false}
                         >
-                            <MapContainer style={{ height: "400px", width: "100%" }}>
-                                <SetView coords={essonnePoint} zoom={12} />
-                                <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-                                <Marker position={essonnePoint}>
-                                    <Popup>Société TEMCI</Popup>
-                                </Marker>
-                            </MapContainer>
-                        </div>
+                            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+                            <Marker position={essonnePoint}>
+                                <Popup>Société TEMCI</Popup>
+                            </Marker>
+                            <SetView coords={essonnePoint} zoom={12} />
+                        </MapContainer>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </div>
     );

@@ -1,4 +1,5 @@
 import React, { FC, useState } from "react";
+import { motion } from "framer-motion";
 
 interface PrestationsProps {
     titre: string;
@@ -33,37 +34,55 @@ const Prestation: FC<PrestationsProps> = ({
                                           }) => {
     const [open, setOpen] = useState(false);
 
+    // sens d'animation selon position
+    const isRTL = position === "rtl";
+
     return (
         <>
             {/* Bloc principal */}
-            <div className="container flex flex-col md:flex-row py-6 md:py-12">
+            <div className="container flex flex-col md:flex-row py-6 md:py-12 overflow-x-hidden">
                 <div className="flex flex-col lg:grid lg:grid-cols-2 gap-y-4 gap-x-24" dir={position}>
                     {/* Texte */}
-                    <div className="flex flex-col justify-center gap-y-6">
-                        <h2 className="text-center text-[#017F7F] text-3xl font-semibold lg:mb-3">{titre}</h2>
-                        <span className="text-center font-semibold text-2xl italic lg:mb-3">{sousTitre}</span>
+                    <motion.div
+                        initial={{ opacity: 0, x: !isRTL ? -100 : 100 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        viewport={{ once: true, amount: 0.5 }}
+                        className="flex flex-col justify-center gap-y-6"
+                    >
+                        <h2 className="text-center text-[#017F7F] text-3xl font-semibold lg:mb-3">
+                            {titre}
+                        </h2>
+                        <span className="text-center font-semibold text-2xl italic lg:mb-3">
+              {sousTitre}
+            </span>
                         <p className="font-serif font-normal leading-normal text-lg lg:text-xl text-left">
                             {texte}
                         </p>
-                    </div>
+                    </motion.div>
 
                     {/* Image + bouton */}
-                    <div className="relative w-fit mx-auto">
+                    <motion.div
+                        initial={{ opacity: 0, x: !isRTL ? 100 : -100 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        viewport={{ once: true, amount: 0.5 }}
+                        className="relative w-fit mx-auto"
+                    >
                         <img
                             className="max-h-[425px] rounded-md object-cover"
                             src={imageUrl}
                             alt={titre}
                         />
-                        {
-                            !!titreModale && <button
+                        {!!titreModale && (
+                            <button
                                 onClick={() => setOpen(true)}
                                 className="absolute bottom-4 right-4 bg-[#017F7F] text-white text-sm font-medium px-4 py-2 rounded-md shadow-md hover:bg-[#026b6b] transition"
                             >
                                 En savoir plus
                             </button>
-                        }
-
-                    </div>
+                        )}
+                    </motion.div>
                 </div>
             </div>
 
@@ -100,9 +119,15 @@ const Prestation: FC<PrestationsProps> = ({
                                         <br />
                                         {titre2Modale}
                                     </h2>
-                                    <span className="font-semibold text-xl text-center italic text-gray-700">{soustitreModale}</span>
-                                    <p className="font-serif text-md text-gray-700 leading-relaxed">{texteModale}</p>
-                                    <span className="font-serif font-semibold text-md text-gray-700 leading-relaxed">{titreListeModale}</span>
+                                    <span className="font-semibold text-xl text-center italic text-gray-700">
+                    {soustitreModale}
+                  </span>
+                                    <p className="font-serif text-md text-gray-700 leading-relaxed">
+                                        {texteModale}
+                                    </p>
+                                    <span className="font-serif font-semibold text-md text-gray-700 leading-relaxed">
+                    {titreListeModale}
+                  </span>
                                     <ul className="list-disc text-md list-inside">
                                         {!!listeModale &&
                                             listeModale.map((item, index) => (
@@ -114,13 +139,12 @@ const Prestation: FC<PrestationsProps> = ({
                                 </div>
                             </div>
                             <span className="text-[#017F7F] text-xl text-center font-semibold">
-                    {footerModale}
-                </span>
+                {footerModale}
+              </span>
                         </div>
                     </div>
                 </div>
             )}
-
 
             <style>
                 {`

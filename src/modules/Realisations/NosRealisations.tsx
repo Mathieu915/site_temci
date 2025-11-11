@@ -33,34 +33,37 @@ const NosRealisations: FC = () => {
         <>
             <Navbar/>
             <HeaderGenerique titre={"Nos réalisations"} sousTitre={"Sous titre page nos réalisations"} image={deshumificateur}/>
-            <GalerieSwiper title={'Titre de la categorie'} images={images}/>
-            <hr
-                style={{
-                    border: "none",
-                    borderTop: "1px solid #ddd",
-                    margin: "auto",
-                    width: "80%",
-                }}
-            />
-            <GalerieSwiper title={'Titre de la categorie'} images={images}/>
-            <hr
-                style={{
-                    border: "none",
-                    borderTop: "1px solid #ddd",
-                    margin: "auto",
-                    width: "80%",
-                }}
-            />
-            <GalerieSwiper title={'Titre de la categorie'} images={images}/>
-            <hr
-                style={{
-                    border: "none",
-                    borderTop: "1px solid #ddd",
-                    margin: "auto",
-                    width: "80%",
-                }}
-            />
-            <GalerieSwiper title={'Titre de la categorie'} images={images}/>
+            <div className="container">
+                <GalerieSwiper title={'Titre de la catégorie 1'} images={images}/>
+                <hr
+                    style={{
+                        border: "none",
+                        borderTop: "1px solid #ddd",
+                        margin: "auto",
+                        width: "100%",
+                    }}
+                />
+                <GalerieSwiper title={'Titre de la catégorie 2'} images={images}/>
+                <hr
+                    style={{
+                        border: "none",
+                        borderTop: "1px solid #ddd",
+                        margin: "auto",
+                        width: "100%",
+                    }}
+                />
+                <GalerieSwiper title={'Titre de la catégorie 3'} images={images}/>
+                <hr
+                    style={{
+                        border: "none",
+                        borderTop: "1px solid #ddd",
+                        margin: "auto",
+                        width: "100%",
+                    }}
+                />
+                <GalerieSwiper title={'Titre de la catégorie 4'} images={images}/>
+            </div>
+
             <ContactBanner titre={'Contactez nous'} texte={'Une question ? Une demande de devis ? N\'hésitez pas à nous contacter ! '} imageUrl={deshumificateur}/>
 
             <Footer/>
