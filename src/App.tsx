@@ -11,7 +11,7 @@ import NosRealisations from "./modules/Realisations/NosRealisations";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/site_temci">
       <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/materiel" element={<Materiel />} />

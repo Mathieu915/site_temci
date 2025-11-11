@@ -35,7 +35,7 @@ const LocalisationPin: FC = () => {
                         Où nous trouver ?
                     </h2>
                     <p className="font-serif font-normal leading-normal text-lg lg:text-xl ">
-                        Nous sommes situés dans le Sud-Essonne a proximité d'Étampes. Retrouvez nos services et notre rayon d'intervention <a className="text-[#017F7F] underline" href="/prestations">ici</a>.
+                        Nous sommes situés dans le Sud-Essonne a proximité d'Étampes. Retrouvez nos services et notre rayon d'intervention <a className="text-[#017F7F] underline" href="/site_temci/prestations">ici</a>.
                     </p>
                 </div>
                 <div>

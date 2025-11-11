@@ -80,7 +80,7 @@ const GalerieSwiper: React.FC<GalerieSwiperProps> = ({ title, images }) => {
                             <div
                                 style={{
                                     width: "100%",
-                                    height: "250px",
+                                    height: "350px",
                                     overflow: "hidden",
                                     borderRadius: "10px",
                                     boxShadow: "0 4px 6px rgba(0,0,0,0.1)",

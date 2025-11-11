@@ -19,3 +19,9 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+// Si l'URL contient un hash ajouté par 404.html, naviguer vers la route réelle
+if (window.location.hash.startsWith("#")) {
+    const actualPath = window.location.hash.slice(1); // retire le #
+    window.history.replaceState({}, "", actualPath);
+}
