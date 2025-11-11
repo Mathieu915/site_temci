@@ -137,13 +137,17 @@ code {
   left: 0;
   bottom: -2px;
   width: 0%;
-  height: 2px;
+  height: 3px;
   background-color: currentColor;
   transition: width 0.3s ease-in-out;
 }
 
-.link-underline:hover::after {
+.link-underline:hover::after, .link-underline.active::after {
   width: 100%;
+}
+
+.link-underline:hover, .link-underline.active{
+  color: #017F7F;
 }
 
 html {

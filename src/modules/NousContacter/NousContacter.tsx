@@ -2,9 +2,10 @@ import React, { FC } from "react"
 import qualification from "../../assets/img/qualification.jpg";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-import fond from "../../assets/img/9.jpg";
+import deshumificateur from "../../assets/img/deshumidificateur.jpg";
 import HeaderGenerique from "../../components/HeaderGenerique";
 import Contact from "../../components/Contact";
+import LocalisationPin from "../../components/LocalisationPin";
 
 
 
@@ -15,7 +16,7 @@ const NousContacter: FC = () => {
     return (
         <>
             <Navbar/>
-            <HeaderGenerique titre={"Contactez notre société TEMCI"} sousTitre={"Spécialiste en climatisation et pompes à chaleur à Morigny-Champigny"} image={fond}/>
+            <HeaderGenerique titre={"Contactez notre société TEMCI"} sousTitre={"Spécialiste en climatisation et pompes à chaleur à Morigny-Champigny"} image={deshumificateur}/>
             <Contact/>
             <Footer/>
         </>

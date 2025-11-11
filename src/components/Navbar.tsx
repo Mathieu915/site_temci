@@ -1,8 +1,10 @@
 import React, { FC, useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import logo from "../assets/img/logo.png";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 
 const Navbar: FC = () => {
+    const location = useLocation(); // récupère le chemin actuel
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,7 +19,6 @@ const Navbar: FC = () => {
             }
             setLastScrollY(currentScrollY);
 
-            // Fermer le menu mobile au scroll
             if (isMenuOpen) setIsMenuOpen(false);
         };
 
@@ -30,6 +31,8 @@ const Navbar: FC = () => {
         if (el) el.scrollIntoView({ behavior: "smooth" });
     };
 
+    const isLinkActive = (path: string) => (location.pathname === path ? "active" : "");
+
     return (
         <nav
             className={`fixed top-0 left-0 right-0 z-50 bg-white shadow-md transition-transform duration-300 ${
@@ -39,49 +42,27 @@ const Navbar: FC = () => {
             <div className="max-w-7xl mx-auto px-4 h-24 flex items-center justify-between">
                 {/* Logo */}
                 <div className="flex-shrink-0">
-                    <a
-                        href="/"
-                        className="cursor-pointer"
-                    >
+                    <a href="/" className="cursor-pointer">
                         <img src={logo} alt="Logo" className="h-20 w-auto" />
                     </a>
                 </div>
 
                 {/* Menu Desktop */}
                 <div className="hidden md:flex flex-1 justify-center">
-                    <div className="flex space-x-20">
-                        <a
-                            href="/materiel"
-                            className="link-underline cursor-pointer"
-                        >
-                            Matériel
-                        </a>
-                        <a
-                            href="/prestations"
-                            className="link-underline cursor-pointer"
-                        >
-                            Nos Prestations
-                        </a>
-                        <a
-                            href="/qualifications"
-                            className="link-underline cursor-pointer"
-                        >
-                            Qualifications
-                        </a>
-                        <a
-                            href="/contact"
-                            className="link-underline cursor-pointer"
-                        >
-                            Contact
-                        </a>
+                    <div className="flex space-x-14">
+                        <a href="/materiel" className={`link-underline cursor-pointer ${isLinkActive("/materiel")}`}>Matériel</a>
+                        <a href="/prestations" className={`link-underline cursor-pointer ${isLinkActive("/prestations")}`}>Nos Prestations</a>
+                        <a href="/qualifications" className={`link-underline cursor-pointer ${isLinkActive("/qualifications")}`}>Qualifications</a>
+                        <a href="/realisations" className={`link-underline cursor-pointer ${isLinkActive("/realisations")}`}>Nos Réalisations</a>
+                        <a href="/contact" className={`link-underline cursor-pointer ${isLinkActive("/contact")}`}>Contact</a>
                     </div>
                 </div>
 
                 {/* Boutons Desktop */}
                 <div className="hidden md:flex items-center gap-8">
                     <a
-                        href="#contact"
-                        className=" flex justify-center items-center px-4 py-1 font-semibold border border-[#b00000] bg-[#b00000] rounded-xl text-white hover:bg-white hover:text-[#b00000] transition-colors duration-300 cursor-pointer link-chevron"
+                        href="/contact"
+                        className="flex justify-center items-center px-4 py-1 font-semibold border border-[#b00000] bg-[#b00000] rounded-xl text-white hover:bg-white hover:text-[#b00000] transition-colors duration-300 cursor-pointer link-chevron"
                         onClick={(e) => {
                             e.preventDefault();
                             scrollToSection("contact");
@@ -89,24 +70,6 @@ const Navbar: FC = () => {
                     >
                         Devis gratuit
                     </a>
-                    {/*<div className="flex space-x-8">*/}
-                    {/*    <a*/}
-                    {/*        href="https://www.facebook.com/share/1CUDV9tbBx/"*/}
-                    {/*        target="_blank"*/}
-                    {/*        rel="noopener noreferrer"*/}
-                    {/*        className="hover:text-blue-600 transition-colors duration-300"*/}
-                    {/*    >*/}
-                    {/*        {FaFacebookF({ size: 20 })}*/}
-                    {/*    </a>*/}
-                    {/*    <a*/}
-                    {/*        href="https://www.instagram.com/ludo_educateur_canin"*/}
-                    {/*        target="_blank"*/}
-                    {/*        rel="noopener noreferrer"*/}
-                    {/*        className="hover:text-pink-500 transition-colors duration-300"*/}
-                    {/*    >*/}
-                    {/*        {FaInstagram({ size: 20 })}*/}
-                    {/*    </a>*/}
-                    {/*</div>*/}
                 </div>
 
                 {/* Burger mobile */}
@@ -138,67 +101,41 @@ const Navbar: FC = () => {
             {isMenuOpen && (
                 <div className="md:hidden bg-white px-4 pt-4 pb-6 space-y-4 shadow-md">
                     <a
-                        href="#presentation"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            scrollToSection("presentation");
-                            setIsMenuOpen(false);
-                        }}
-                        className="block"
+                        href="/materiel"
+                        className={`block ${isLinkActive("/materiel")}`}
                     >
-                        Présentation
+                        Matériel
                     </a>
                     <a
-                        href="#presentationPerso"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            scrollToSection("presentationPerso");
-                            setIsMenuOpen(false);
-                        }}
-                        className="block"
+                        href="/prestations"
+                        className={`block ${isLinkActive("/prestations")}`}
                     >
-                        Me connaître
+                        Nos Prestations
                     </a>
                     <a
-                        href="#services"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            scrollToSection("services");
-                            setIsMenuOpen(false);
-                        }}
-                        className="block"
+                        href="/qualifications"
+                        className={`block ${isLinkActive("/qualifications")}`}
                     >
-                        Mes services
+                        Qualifications
                     </a>
                     <a
-                        href="#contact"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            scrollToSection("contact");
-                            setIsMenuOpen(false);
-                        }}
-                        className="block mt-4 px-4 py-2 border border-black text-center rounded-md text-black hover:bg-black hover:text-white transition-colors duration-300"
+                        href="/realisations"
+                        className={`block ${isLinkActive("/realisations")}`}
                     >
-                        Contactez-moi
+                        Nos Réalisations
                     </a>
-                    {/*<div className="flex w-full justify-center space-x-6 pt-4">*/}
-                    {/*    <a*/}
-                    {/*        href="https://www.facebook.com/share/1CUDV9tbBx/"*/}
-                    {/*        target="_blank"*/}
-                    {/*        rel="noopener noreferrer"*/}
-                    {/*        className="hover:text-blue-600"*/}
-                    {/*    >*/}
-                    {/*        {FaFacebookF({ size: 20 })}*/}
-                    {/*    </a>*/}
-                    {/*    <a*/}
-                    {/*        href="https://www.instagram.com/ludo_educateur_canin"*/}
-                    {/*        target="_blank"*/}
-                    {/*        rel="noopener noreferrer"*/}
-                    {/*        className="hover:text-pink-500"*/}
-                    {/*    >*/}
-                    {/*        {FaInstagram({ size: 20 })}*/}
-                    {/*    </a>*/}
-                    {/*</div>*/}
+                    <a
+                        href="/contact"
+                        className={`block ${isLinkActive("/realisations")}`}
+                    >
+                        Contact
+                    </a>
+                    <a
+                        href="/contact"
+                        className={`flex justify-center items-center px-4 py-1 font-semibold border border-[#b00000] bg-[#b00000] rounded-xl text-white hover:bg-white hover:text-[#b00000] transition-colors duration-300 cursor-pointer link-chevron`}
+                    >
+                        Devis gratuit
+                    </a>
                 </div>
             )}
         </nav>

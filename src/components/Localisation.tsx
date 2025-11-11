@@ -3,7 +3,7 @@ import { MapContainer, Polygon, Popup, TileLayer, useMap } from "react-leaflet";
 import 'leaflet/dist/leaflet.css';
 
 const Localisation: FC = () => {
-    const essonneCoords = [
+    const essonneCoords: [number, number][] = [
         [48.37, 2.05],  // un peu plus bas et à l'ouest
         [48.40, 2.28],
         [48.48, 2.45],

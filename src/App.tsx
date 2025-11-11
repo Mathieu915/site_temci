@@ -6,6 +6,7 @@ import Materiel from "./modules/Materiel/Materiel";
 import NosPrestations from "./modules/Prestations/NosPrestations";
 import NosQualifications from "./modules/Qualifications/NosQualifications";
 import NousContacter from "./modules/NousContacter/NousContacter";
+import NosRealisations from "./modules/Realisations/NosRealisations";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path="/materiel" element={<Materiel />} />
           <Route path="/prestations" element={<NosPrestations />} />
           <Route path="/qualifications" element={<NosQualifications />} />
+          <Route path="/realisations" element={<NosRealisations />} />
           <Route path="/contact" element={<NousContacter />} />
       </Routes>
     </Router>

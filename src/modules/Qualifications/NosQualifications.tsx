@@ -1,9 +1,11 @@
 import React, { FC } from "react"
-import qualification from "../../assets/img/qualification.jpg";
+import qualification from "../../assets/img/qualification.png";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import fond from "../../assets/img/9.jpg";
 import HeaderGenerique from "../../components/HeaderGenerique";
+import ContactBanner from "../../components/ContactBanner";
+import deshumificateur from "../../assets/img/deshumidificateur.jpg";
 
 
 
@@ -14,7 +16,7 @@ const NosQualifications: FC = () => {
     return (
         <>
             <Navbar/>
-            <HeaderGenerique titre={"Nos qualifications"} sousTitre={"« La reconnaissance d'un vrai savoir faire »"} image={fond}/>
+            <HeaderGenerique titre={"Nos qualifications"} sousTitre={"« La reconnaissance d'un vrai savoir faire »"} image={deshumificateur}/>
             <div className="container flex flex-col md:flex-row py-6 md:py-12">
                 <div className="flex flex-col lg:grid lg:grid-cols-2 gap-y-4 gap-x-24">
                     <div className="flex flex-col justify-center gap-y-6 lg:gap-y-12">
@@ -43,6 +45,8 @@ const NosQualifications: FC = () => {
 
                 </div>
             </div>
+            <ContactBanner titre={'Contactez nous'} texte={'Une question ? Une demande de devis ? N\'hésitez pas à nous contacter ! '} imageUrl={deshumificateur}/>
+
             <Footer/>
         </>
 

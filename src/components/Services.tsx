@@ -21,7 +21,7 @@ const Services: FC = () => {
                         <div>
                             <div className="mx-auto relative">
                                 <img
-                                    className="rounded-tl-3xl"
+                                    className="rounded-md"
                                     src={vehicules}
                                     alt=""/>
                             </div>
