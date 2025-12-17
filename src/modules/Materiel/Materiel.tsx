@@ -65,7 +65,7 @@ const Materiel: FC = () => {
         {
             titre: "Pompe à chaleur eau/eau sur nappe phréatique",
             sousTitre: "La puissance de l’énergie souterraine au service de votre confort",
-            texte: "La pompe à chaleur eau/eau exploite la chaleur contenue dans la nappe phréatique pour alimenter votre chauffage et votre eau chaude sanitaire. Ce système géothermique haut rendement offre une performance exceptionnelle, une consommation réduite et un confort constant, été comme hiver.",
+            texte: "La pompe à chaleur eau/eau exploite la chaleur contenue dans la nappe phréatique pour alimenter votre chauffage et votre eau chaude sanitaire. Ce système aquathermique haut rendement offre une performance exceptionnelle, une consommation réduite et un confort constant, été comme hiver.",
             imageUrl: pacEauEau,
             titreModale: "Pompe à chaleur eau/eau",
             titre2Modale: "L’énergie souterraine au service de votre confort",
@@ -118,7 +118,7 @@ const Materiel: FC = () => {
                 "Chaleur douce et homogène dans toutes les pièces",
                 "Gain d’espace et esthétique : plus besoin de radiateurs visibles",
                 "Économie d’énergie par rapport aux systèmes classiques",
-                "Compatible avec les pompes à chaleur et chaudières à basse température",
+                "Compatible avec les pompes à chaleur",
                 "Confort sanitaire optimal : pas de déplacement de poussière, idéal pour les allergies",
                 "Régulation précise pièce par pièce pour une température sur mesure"
             ],
@@ -198,7 +198,7 @@ const Materiel: FC = () => {
     return (
         <>
             <Navbar/>
-            <HeaderGenerique titre={"Matériel"} sousTitre={"Phrase d'accroche pour la page matériel"} image={fond}/>
+            <HeaderGenerique titre={"Matériel"} sousTitre={"Des solutions matérielles adaptées à chaque besoin"} image={fond}/>
             <div className="md:pt-24">
                 {presta1.map((presta, index) => (
                     <Prestation

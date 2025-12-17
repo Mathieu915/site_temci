@@ -1,30 +1,42 @@
-import React, { FC } from "react"
+import React, { FC, useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import Services from "../../components/Services";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-import fond from "../../assets/img/9.jpg";
-import Prestation from "../../components/Prestation";
 import Localisation from "../../components/Localisation";
-import atlantic from "../../assets/img/atlantic.png"
-import daikin from "../../assets/img/daikin.png"
-import dantherm from "../../assets/img/dantherm.png"
-import hitachi from "../../assets/img/hitachi.png"
-import mitsu from "../../assets/img/mitsu.png"
-import stiebel from "../../assets/img/Stiebel.png"
-import vim from "../../assets/img/VIM.png"
 import Autoswiper from "../../components/Autoswiper";
 import HeaderGenerique from "../../components/HeaderGenerique";
 import ContactBanner from "../../components/ContactBanner";
-import deshumificateur from "../../assets/img/deshumidificateur.jpg";
+import Prestation from "../../components/Prestation";
 import PrestationVideo from "../../components/PrestationVideo";
-import video from "../../assets/videos/video.mp4"
 
-
-
-
-
+import atlantic from "../../assets/img/atlantic.png";
+import daikin from "../../assets/img/daikin.png";
+import dantherm from "../../assets/img/dantherm.png";
+import hitachi from "../../assets/img/hitachi.png";
+import mitsu from "../../assets/img/mitsu.png";
+import stiebel from "../../assets/img/Stiebel.png";
+import vim from "../../assets/img/VIM.png";
+import deshumificateur from "../../assets/img/deshumidificateur.jpg";
+import video from "../../assets/videos/video.mp4";
 
 const NosPrestations: FC = () => {
+    const location = useLocation();
+    const localisationRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (location.state?.scrollTo === "localisation" && localisationRef.current) {
+            const y =
+                localisationRef.current.getBoundingClientRect().top +
+                window.pageYOffset -
+                100;
+
+            window.scrollTo({
+                top: y,
+                behavior: "smooth",
+            });
+        }
+    }, [location]);
 
     const presta3 = [
         {
@@ -60,8 +72,13 @@ const NosPrestations: FC = () => {
 
     return (
         <>
-            <Navbar/>
-            <HeaderGenerique titre={"Nos prestations"} sousTitre={"Phrase d'accroche pour la page nos prestations"} image={deshumificateur}/>
+            <Navbar />
+            <HeaderGenerique
+                titre="Nos prestations"
+                sousTitre="Explorez nos presations et trouvez la solution qui vous correspond"
+                image={deshumificateur}
+            />
+
             <div className="md:pt-24">
                 {presta3.map((presta, index) => (
                     <Prestation
@@ -70,17 +87,19 @@ const NosPrestations: FC = () => {
                         sousTitre={presta.sousTitre}
                         texte={presta.texte}
                         imageUrl={presta.imageUrl}
-                        position={index % 2 === 0 ? 'ltr' : 'rtl'}
+                        position={index % 2 === 0 ? "ltr" : "rtl"}
                         titreModale={presta.titreModale}
                         soustitreModale={presta.soustitreModale}
                         texteModale={presta.texteModale}
                     />
                 ))}
             </div>
-            <Localisation/>
+
+            <Localisation ref={localisationRef} />
+
             <Autoswiper
-                titre={"Nous distribuons les marques suivantes : "}
-                sousTitre={"« Matériel performant : pompes à chaleur air/eau, climatisation réversible air/air, ballon thermodynamique, pompes à chaleur eau/eau, VMC double-flux, déshumidificateur de piscine »"}
+                titre="Nous distribuons les marques suivantes : "
+                sousTitre="« Matériel performant : pompes à chaleur air/eau, climatisation réversible air/air, ballon thermodynamique, VMC double-flux, déshumidificateur de piscine »"
                 images={[
                     atlantic,
                     daikin,
@@ -89,26 +108,26 @@ const NosPrestations: FC = () => {
                     mitsu,
                     stiebel,
                     vim,
-                    atlantic,
-                    daikin,
-                    dantherm,
-                    hitachi,
-                    mitsu,
-                    stiebel,
-                    vim
-                ]}/>
-            <ContactBanner titre={'Contactez nous'} texte={'Une question ? Une demande de devis ? N\'hésitez pas à nous contacter ! '} imageUrl={deshumificateur}/>
-            <PrestationVideo
-                titre={'Le titre associé à la démonstration vidéo'}
-                sousTitre={'Le sous-titre associé à la démonstration vidéo'}
-                texte={'Lorem ipsum dolor sit amet consectetur adipiscing elit mauris, erat nisl nunc ac nibh fusce ullamcorper facilisis felis, sodales donec semper eget magnis arcu conubia. Facilisi mi enim viverra dapibus justo vivamus urna, ornare tristique rhoncus cubilia in sapien cum, posuere porta imperdiet facilisis nullam senectus. Habitasse aenean dapibus rutrum platea fames accumsan litora mollis, diam tellus quam vivamus class parturient magnis congue, suspendisse integer consequat vulputate pharetra porttitor dignissim.'}
-                videoUrl={video}
-                position={'ltr'}
+                ]}
             />
-            <Footer/>
+
+            <ContactBanner
+                titre="Contactez nous"
+                texte="Une question ? Une demande de devis ? N'hésitez pas à nous contacter !"
+                imageUrl={deshumificateur}
+            />
+
+            <PrestationVideo
+                titre="Le titre associé à la démonstration vidéo"
+                sousTitre="Le sous-titre associé à la démonstration vidéo"
+                texte="Lorem ipsum dolor sit amet consectetur adipiscing elit mauris..."
+                videoUrl={video}
+                position="ltr"
+            />
+
+            <Footer />
         </>
+    );
+};
 
-    )
-}
-
-export default NosPrestations
+export default NosPrestations;

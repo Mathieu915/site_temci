@@ -32,7 +32,7 @@ const NosRealisations: FC = () => {
     return (
         <>
             <Navbar/>
-            <HeaderGenerique titre={"Nos réalisations"} sousTitre={"Sous titre page nos réalisations"} image={deshumificateur}/>
+            <HeaderGenerique titre={"Nos réalisations"} sousTitre={"Le reflet de notre savoir faire"} image={deshumificateur}/>
             <div className="container">
                 <GalerieSwiper title={'Titre de la catégorie 1'} images={images}/>
                 <hr

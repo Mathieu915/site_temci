@@ -62,7 +62,7 @@ const Contact: FC = () => {
                 <div className="px-4 lg:pl-0 lg:pr-12 rounded-xl flex flex-col gap-6">
                     <h2 className="text-xl lg:text-2xl text-[#017F7F] font-semibold">Pourquoi choisir notre société TEMCI :</h2>
                     <ul className="text-lg lg:text-xl list-disc list-outside ml-4">
-                        <li className="mb-2"><strong>Plus de 20 ans d'expérience</strong> dans le domaine des pompes à chaleur et de la climatisation</li>
+                        <li className="mb-2"><strong>Plus de 25 ans d'expérience</strong> dans le domaine des pompes à chaleur et de la climatisation</li>
                         <li className="mb-2"><strong>Installation sur mesure,</strong> adaptée à vos besoins, à votre logement ou local professionnel</li>
                         <li className="mb-2"><strong>Service après-vente réactif</strong> et contrat d'entretien possible</li>
                         <li className="mb-2"><strong>Certification RGE,</strong> gage de qualité et d'éligibilité aux aides</li>

@@ -56,7 +56,7 @@ const Prestation: FC<PrestationsProps> = ({
                         <span className="text-center font-semibold text-2xl italic lg:mb-3">
               {sousTitre}
             </span>
-                        <p className="font-serif font-normal leading-normal text-lg lg:text-xl text-left">
+                        <p className="font-serif font-normal leading-normal text-lg lg:text-xl text-left" style={{ unicodeBidi: "isolate", direction: "ltr" }}>
                             {texte}
                         </p>
                     </motion.div>

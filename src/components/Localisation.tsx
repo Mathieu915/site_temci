@@ -1,9 +1,10 @@
-import React, { FC, useEffect } from "react";
+// Localisation.tsx
+import React, { forwardRef, useEffect } from "react";
 import { MapContainer, Polygon, Popup, TileLayer, useMap } from "react-leaflet";
 import { motion } from "framer-motion";
 import "leaflet/dist/leaflet.css";
 
-const Localisation: FC = () => {
+const Localisation = forwardRef<HTMLDivElement, {}>((_, ref) => {
     const essonneCoords: [number, number][] = [
         [48.37, 2.05],
         [48.40, 2.28],
@@ -26,10 +27,10 @@ const Localisation: FC = () => {
 
     return (
         <div
+            ref={ref}
             id="localisation"
             className="container flex flex-col py-12 gap-6 md:gap-12 overflow-x-hidden"
         >
-            {/* Titre */}
             <motion.h2
                 initial={{ opacity: 0, x: -100 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -41,7 +42,6 @@ const Localisation: FC = () => {
             </motion.h2>
 
             <div className="flex flex-col lg:grid lg:grid-cols-2 gap-y-4 gap-x-8" dir="ltr">
-                {/* Bloc texte */}
                 <motion.div
                     initial={{ opacity: 0, x: -100 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -61,7 +61,6 @@ const Localisation: FC = () => {
                     </p>
                 </motion.div>
 
-                {/* Bloc carte : wrapper animé, map statique */}
                 <motion.div
                     initial={{ opacity: 0, x: 100 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -98,6 +97,8 @@ const Localisation: FC = () => {
             </div>
         </div>
     );
-};
+});
+
+Localisation.displayName = "Localisation";
 
 export default Localisation;

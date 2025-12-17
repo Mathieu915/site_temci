@@ -3,8 +3,8 @@ import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
-// Corrige l’icône par défaut
 import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
 import markerIcon from "leaflet/dist/images/marker-icon.png";
 import markerShadow from "leaflet/dist/images/marker-shadow.png";
@@ -29,11 +29,9 @@ const LocalisationPin: FC = () => {
 
     return (
         <div
-            id="localisation"
             className="container flex flex-col py-12 gap-6 md:gap-12 overflow-x-hidden"
         >
             <div className="flex flex-col lg:grid lg:grid-cols-2 gap-y-4 gap-x-8" dir="ltr">
-                {/* Bloc texte avec animation */}
                 <motion.div
                     initial={{ opacity: 0, x: -100 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -47,14 +45,17 @@ const LocalisationPin: FC = () => {
                     <p className="font-serif font-normal leading-normal text-lg lg:text-xl">
                         Nous sommes situés dans le Sud-Essonne à proximité d'Étampes. Retrouvez nos
                         services et notre rayon d'intervention{" "}
-                        <a className="text-[#017F7F] underline" href="/site_temci/prestations">
+                        <Link
+                            to="/prestations"
+                            state={{ scrollTo: "localisation" }}
+                            className="text-[#017F7F] underline"
+                        >
                             ici
-                        </a>
+                        </Link>
                         .
                     </p>
                 </motion.div>
 
-                {/* Bloc map avec animation sur le wrapper */}
                 <motion.div
                     initial={{ opacity: 0, x: 100 }}
                     whileInView={{ opacity: 1, x: 0 }}
