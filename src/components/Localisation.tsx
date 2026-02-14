@@ -6,15 +6,15 @@ import "leaflet/dist/leaflet.css";
 
 const Localisation = forwardRef<HTMLDivElement, {}>((_, ref) => {
     const essonneCoords: [number, number][] = [
-        [48.37, 2.05],
-        [48.40, 2.28],
-        [48.48, 2.45],
-        [48.58, 2.45],
-        [48.62, 2.35],
-        [48.60, 2.05],
-        [48.52, 1.95],
-        [48.45, 2.0],
-        [48.37, 2.05],
+        [48.65, 1.80],
+        [48.75, 1.95],
+        [48.80, 2.25],
+        [48.75, 2.70],
+        [48.55, 2.75],
+        [48.35, 2.55],
+        [48.17, 2.25],
+        [48.30, 1.90],
+        [48.65, 1.80],
     ];
 
     function SetView({ coords, zoom }: { coords: [number, number]; zoom: number }) {
@@ -50,14 +50,11 @@ const Localisation = forwardRef<HTMLDivElement, {}>((_, ref) => {
                     className="flex flex-col justify-center gap-y-6 lg:gap-y-12 text-left lg:w-3/4"
                 >
                     <p className="font-serif font-normal leading-normal text-lg lg:text-xl">
-                        Lorem ipsum dolor sit amet consectetur adipiscing elit mauris, erat
-                        nisl nunc ac nibh fusce ullamcorper facilisis felis, sodales donec
-                        semper eget magnis arcu conubia. Facilisi mi enim viverra dapibus
-                        justo vivamus urna, ornare tristique rhoncus cubilia in sapien cum,
-                        posuere porta imperdiet facilisis nullam senectus. Habitasse aenean
-                        dapibus rutrum platea fames accumsan litora mollis, diam tellus quam
-                        vivamus class parturient magnis congue, suspendisse integer consequat
-                        vulputate pharetra porttitor dignissim.
+                        Nous intervenons sur une large zone couvrant notamment Rambouillet, Les Ulis, Saint-Fargeau-
+                        Ponthierry et Pithiviers, qui représentent les secteurs les plus éloignés de notre zone d’intervention.
+                        Entre ces communes et leurs environs, nous accompagnons particuliers et professionnels pour
+                        l’installation, l’entretien et l’optimisation de solutions de chauffage performantes, telles que le
+                        plancher chauffant et les pompes à chaleur.
                     </p>
                 </motion.div>
 
@@ -90,7 +87,7 @@ const Localisation = forwardRef<HTMLDivElement, {}>((_, ref) => {
                             >
                                 <Popup>Zone d’intervention : Essonne (91)</Popup>
                             </Polygon>
-                            <SetView coords={[48.6, 2.25]} zoom={9} />
+                            <SetView coords={[48.6, 2.25]} zoom={8} />
                         </MapContainer>
                     </div>
                 </motion.div>

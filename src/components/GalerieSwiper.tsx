@@ -90,6 +90,8 @@ const GalerieSwiper: React.FC<GalerieSwiperProps> = ({ title, images }) => {
                             1024: { slidesPerView: 3 },
                         }}
                         style={{ padding: "1rem 0" }}
+                        centeredSlides={images.length === 1}
+                        watchOverflow={true}
                     >
                         {images.map((img, index) => (
                             <SwiperSlide key={index}>

@@ -1,6 +1,9 @@
 import React, { FC } from "react";
 import { motion } from "framer-motion";
 import vehicules from "../assets/img/vehicules.png";
+import { Link } from "react-router-dom";
+import avisGoogle from "../assets/img/google-avis.png";
+
 
 const Services: FC = () => {
     return (
@@ -21,7 +24,7 @@ const Services: FC = () => {
 
             <div className="flex flex-col md:flex-row">
                 <div
-                    className="flex flex-col lg:grid lg:grid-cols-2 gap-y-4 gap-x-24 overflow-x-hidden"
+                    className="flex flex-col lg:grid lg:grid-cols-2 lg:items-center gap-y-4 gap-x-24 overflow-x-hidden"
                     dir="rtl"
                 >
                     {/* Texte : slide depuis la droite */}
@@ -45,6 +48,12 @@ const Services: FC = () => {
                             performantes et économiques s'adaptent à vos besoins pour garantir
                             chaleur en hiver et fraicheur en été.
                         </p>
+                        <Link
+                            to="https://www.google.com/search?sca_esv=4a6faef836c9314f&sxsrf=ANbL-n4EwCjHeiHljdWuiqWa5eGsrC1NRw:1768077184369&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOSmFJaD0nPDy4gFwa6C0Vium2qpS8gF8Jz4N6jxM5HfgjS9IxYpsrpAoZLqRF6xFyb2cZZxJBEABRMn9P0RANFUHHGxV&q=TEMCI+Avis&sa=X&ved=2ahUKEwjp6Ynk6IGSAxW4TqQEHZ28EOQQ0bkNegQIKhAE&biw=1536&bih=730&dpr=1.25&aic=0"
+                            target="_blank"
+                        >
+                            <img className="mx-auto" src={avisGoogle} alt="avis google"/>
+                        </Link>
                     </motion.div>
 
                     {/* Image : slide depuis la gauche */}

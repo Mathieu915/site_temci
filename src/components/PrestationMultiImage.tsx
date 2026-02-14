@@ -35,7 +35,7 @@ const PrestationMultiImage: React.FC<PrestationsProps> = ({
         <>
             <div className="container flex flex-col md:flex-row py-6 md:py-12 overflow-x-hidden">
                 <div
-                    className="flex flex-col lg:grid lg:grid-cols-2 gap-y-4 gap-x-24"
+                    className="flex flex-col lg:grid lg:grid-cols-2 gap-y-8 gap-x-24"
                     dir={position}
                 >
                     {/* Bloc texte */}
@@ -43,7 +43,7 @@ const PrestationMultiImage: React.FC<PrestationsProps> = ({
                         initial={{ opacity: 0, x: !isRTL ? -100 : 100 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
-                        viewport={{ once: true, amount: 0.5 }}
+                        viewport={{ once: true, amount: 0.2 }}
                         className="flex flex-col justify-center gap-y-6 lg:gap-y-12"
                     >
                         <h2 className="text-center text-[#017F7F] text-3xl font-semibold">
@@ -52,9 +52,10 @@ const PrestationMultiImage: React.FC<PrestationsProps> = ({
                         <span className="text-center font-semibold text-2xl italic">
               {sousTitre}
             </span>
-                        <p className="font-serif font-normal leading-normal text-lg lg:text-xl text-left">
+                        <p className="font-serif leading-normal text-lg lg:text-xl text-left">
                             {texte}
                         </p>
+
                         {!!titreModale && (
                             <div className="mx-auto">
                                 <button
@@ -67,28 +68,24 @@ const PrestationMultiImage: React.FC<PrestationsProps> = ({
                         )}
                     </motion.div>
 
-                    {/* Bloc images (2x2 avec flip 3D) */}
+                    {/* Bloc images */}
                     <motion.div
                         initial={{ opacity: 0, x: !isRTL ? 100 : -100 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
-                        viewport={{ once: true, amount: 0.5 }}
-                        className="grid grid-cols-1 md:grid-cols-2 gap-12"
+                        viewport={{ once: true, amount: 0.2 }}
+                        className="grid grid-cols-1 md:grid-cols-2 gap-10 justify-items-center"
                     >
                         {images.slice(0, 4).map((image, index) => (
                             <div
                                 key={index}
-                                className="group relative w-full aspect-square max-w-[280px] mx-auto [perspective:1000px] cursor-pointer"
+                                className="group relative w-full aspect-square md:max-w-[280px] [perspective:1000px] cursor-pointer"
                             >
-                                {/* Carte */}
                                 <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] rounded-lg shadow-md">
                                     {/* Face avant */}
                                     <div
                                         className="absolute inset-0 rounded-lg overflow-hidden"
-                                        style={{
-                                            backfaceVisibility: "hidden",
-                                            transform: "rotateY(0deg)",
-                                        }}
+                                        style={{ backfaceVisibility: "hidden" }}
                                     >
                                         <img
                                             src={image.url}
@@ -126,9 +123,7 @@ const PrestationMultiImage: React.FC<PrestationsProps> = ({
                                         <h3 className="font-semibold text-lg mb-2 text-[#017F7F]">
                                             {image.titre}
                                         </h3>
-                                        <p className="text-sm opacity-90 text-black">
-                                            {image.texte}
-                                        </p>
+                                        <p className="text-sm text-black/90">{image.texte}</p>
                                     </div>
                                 </div>
                             </div>
@@ -137,91 +132,46 @@ const PrestationMultiImage: React.FC<PrestationsProps> = ({
                 </div>
             </div>
 
-            {/* Modale scrollable */}
+            {/* Modale */}
             {open && (
-                <div className="fixed inset-0 z-50 flex items-start justify-center bg-black/50 backdrop-blur-sm overflow-y-auto lg:overflow-y-hidden">
-                    <div
-                        className="bg-white rounded-lg shadow-lg max-w-7xl w-full mx-4 my-10 relative overflow-hidden h-auto md:h-[90vh] md:max-h-[650px] flex flex-col md:flex-row"
-                        style={{ animation: "fadeIn 0.2s ease-in-out" }}
-                    >
+                <div className="fixed inset-0 z-50 flex justify-center bg-black/50 backdrop-blur-sm overflow-y-auto">
+                    <div className="bg-white rounded-lg shadow-lg max-w-7xl w-full mx-4 my-10 relative">
                         <button
                             onClick={() => setOpen(false)}
-                            className="absolute top-3 right-3 text-gray-500 hover:text-gray-700 text-2xl"
+                            className="absolute top-3 right-3 text-2xl"
                         >
                             &times;
                         </button>
 
-                        <div className="flex flex-col p-6 md:p-10 gap-6 justify-center w-full">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                                {/* Bloc images dans la modale */}
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                                    {images.slice(0, 4).map((image, index) => (
-                                        <div
-                                            key={index}
-                                            className="group relative w-full aspect-square max-w-[280px] mx-auto [perspective:1000px] cursor-pointer"
-                                        >
-                                            <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] rounded-lg shadow-md">
-                                                {/* Face avant */}
-                                                <div
-                                                    className="absolute inset-0 rounded-lg overflow-hidden"
-                                                    style={{
-                                                        backfaceVisibility: "hidden",
-                                                        transform: "rotateY(0deg)",
-                                                    }}
-                                                >
-                                                    <img
-                                                        src={image.url}
-                                                        alt={image.titre}
-                                                        className="object-cover w-full h-full"
-                                                    />
-                                                </div>
+                        <div className="p-6 md:p-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
+                                {images.slice(0, 4).map((image, index) => (
+                                    <div
+                                        key={index}
+                                        className="w-full aspect-square md:max-w-[280px]"
+                                    >
+                                        <img
+                                            src={image.url}
+                                            alt={image.titre}
+                                            className="w-full h-full object-cover rounded-lg shadow-md"
+                                        />
+                                    </div>
+                                ))}
+                            </div>
 
-                                                {/* Face arrière */}
-                                                <div
-                                                    className="absolute inset-0 flex flex-col items-center justify-center text-center bg-white p-4 rounded-lg"
-                                                    style={{
-                                                        transform: "rotateY(180deg)",
-                                                        backfaceVisibility: "hidden",
-                                                    }}
-                                                >
-                                                    <h3 className="font-semibold text-lg mb-2 text-[#017F7F]">
-                                                        {image.titre}
-                                                    </h3>
-                                                    <p className="text-sm opacity-90 text-black">
-                                                        {image.texte}
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-
-                                {/* Texte modale */}
-                                <div className="flex flex-col justify-start gap-y-4 md:max-h-[450px] md:overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100">
-                                    <h2 className="text-[#017F7F] text-2xl text-center font-semibold">
-                                        {titreModale}
-                                    </h2>
-                                    <span className="font-semibold text-xl text-center italic text-gray-700">
-                    {soustitreModale}
-                  </span>
-                                    <p className="font-serif text-md text-gray-700 leading-relaxed">
-                                        {texteModale}
-                                    </p>
-                                </div>
+                            <div className="flex flex-col gap-4">
+                                <h2 className="text-[#017F7F] text-2xl text-center font-semibold">
+                                    {titreModale}
+                                </h2>
+                                <span className="text-center italic text-lg">
+                  {soustitreModale}
+                </span>
+                                <p className="font-serif">{texteModale}</p>
                             </div>
                         </div>
                     </div>
                 </div>
             )}
-
-            <style>
-                {`
-          @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.97); }
-            to { opacity: 1; transform: scale(1); }
-          }
-        `}
-            </style>
         </>
     );
 };

@@ -9,11 +9,18 @@ import plancherChauffant from "../../assets/img/plancher-chauffant.jpg";
 import climPrecision from "../../assets/img/clim-precision.jpg";
 import centraleDoubleFlux from "../../assets/img/centrale-double-flux.jpg";
 import deshumificateur from "../../assets/img/deshumidificateur.jpg";
+import ballon_thermo from "../../assets/img/ballon_thermo.jpg";
+import vrv_ge_longjumeau from "../../assets/img/pac_air_air_longjumeau.jpg";
+import murale from "../../assets/img/murale.jpg";
+import console from "../../assets/img/console.jpeg";
+import gainable from "../../assets/img/gainable.jpg";
+import cassette from "../../assets/img/cassette.png";
 import vrv from "../../assets/img/vrv.jpg";
 import Prestation from "../../components/Prestation";
 import HeaderGenerique from "../../components/HeaderGenerique";
 import PrestationMultiImage from "../../components/PrestationMultiImage";
 import ContactBanner from "../../components/ContactBanner";
+import vehicules from "../../assets/img/vehicules.png";
 
 
 
@@ -88,7 +95,7 @@ const Materiel: FC = () => {
             titre: "Ballon thermodynamique",
             sousTitre: "Eau chaude économique et écologique",
             texte: "Le ballon thermodynamique capte les calories présentes dans l’air pour chauffer votre eau sanitaire de façon économique et durable. Cette solution écologique réduit votre facture d’énergie tout en garantissant un confort quotidien.",
-            imageUrl: fond,
+            imageUrl: ballon_thermo,
             titreModale: "Ballon thermodynamique",
             titre2Modale: "Produisez votre eau chaude en économisant l’énergie",
             soustitreModale: "Une solution écologique, économique et fiable pour l’eau chaude sanitaire.",
@@ -107,7 +114,7 @@ const Materiel: FC = () => {
         {
             titre: "Plancher chauffant",
             sousTitre: "Le confort absolu, sans radiateurs visibles",
-            texte: "Offrez à votre intérieur une chaleur douce et uniforme grâce au plancher chauffant. Économique, discret et performant, ce système s’intègre parfaitement à toutes les pièces et améliore votre confort thermique tout en réduisant vos factures d’énergie.",
+            texte: "Offrez à votre intérieur une chaleur douce et uniforme grâce au plancher chauffant. Économique, discret et performant, ce système s’intègre parfaitement à toutes les pièces et améliore votre confort thermique tout en réduisant vos factures d’énergie. Associé à une pompe à chaleur, le plancher chauffant garantit un rendement énergétique optimal.",
             imageUrl: plancherChauffant,
             titreModale: "Plancher chauffant",
             titre2Modale: "Confort invisible et chaleur douce dans toute la maison",
@@ -143,7 +150,7 @@ const Materiel: FC = () => {
                 "Fiabilité 24h/24 et 7j/7 : fonctionnement en continu sans interruption",
                 "Préservation des équipements sensibles : serveurs, instruments de mesure, systèmes électroniques",
                 "Performance énergétique optimisée : réduction de la consommation électrique",
-                "Matériel de grandes marques et installation certifiée RGE",
+                "Matériel de grandes marques",
                 "Entretien et dépannage assurés par nos soins : un service complet et durable"
             ],
             footerModale: "Contactez-nous dès aujourd’hui pour une étude gratuite et l’installation de votre climatisation de précision parfaitement adaptée à vos besoins."
@@ -180,7 +187,8 @@ const Materiel: FC = () => {
             listeModale: [
                 "Qualité d’air optimale : filtres performants éliminant poussières, pollens et particules fines",
                 "Économies d’énergie importantes : récupération de chaleur intégrée",
-                "Confort thermique toute l’année : température homogène et agréable dans toutes les pièces"
+                "Confort thermique toute l’année : température homogène et agréable dans toutes les pièces",
+                "Mise en conformité des locaux d'activité selon le code du travail"
             ],
             footerModale: "Contactez-nous dès aujourd’hui pour une étude gratuite et l’installation d’une centrale double-flux."
         }
@@ -188,17 +196,17 @@ const Materiel: FC = () => {
 
 
     const images = [
-        { url: deshumificateur, titre: "Cassette", texte: "Diffuse l’air de manière homogène, particulièrement adaptée aux grands volumes ou espaces professionnels" },
-        { url: deshumificateur, titre: "Murale", texte: "Compacte et facile à installer, idéale pour les pièces de vie et chambres" },
-        { url: deshumificateur, titre: "Gainable", texte: "Totalement invisible, intégrée dans les plafonds ou cloisons pour un rendu discret" },
-        { url: deshumificateur, titre: "Console", texte: "S’installe en bas de mur, parfaite en remplacement d’un radiateur" },
+        { url: cassette, titre: "Cassette", texte: "Diffuse l’air de manière homogène, particulièrement adaptée aux grands volumes ou espaces professionnels" },
+        { url: murale, titre: "Murale", texte: "Compacte et facile à installer, idéale pour les pièces de vie et chambres" },
+        { url: gainable, titre: "Gainable", texte: "Totalement invisible, intégrée dans les plafonds ou cloisons pour un rendu discret" },
+        { url: console, titre: "Console", texte: "S’installe en bas de mur, parfaite en remplacement d’un radiateur" },
     ];
 
 
     return (
         <>
             <Navbar/>
-            <HeaderGenerique titre={"Matériel"} sousTitre={"Des solutions matérielles adaptées à chaque besoin"} image={fond}/>
+            <HeaderGenerique titre={"Matériel"} sousTitre={"Des solutions matérielles adaptées à chaque besoin"} image={vrv_ge_longjumeau}/>
             <div className="md:pt-24">
                 {presta1.map((presta, index) => (
                     <Prestation
@@ -246,7 +254,7 @@ const Materiel: FC = () => {
                     />
 
                 ))}
-                <ContactBanner titre={'Contactez nous'} texte={'Une question ? Une demande de devis ? N\'hésitez pas à nous contacter ! '} imageUrl={deshumificateur}/>
+                <ContactBanner titre={'Contactez nous'} texte={'Une question ? Une demande de devis ? N\'hésitez pas à nous contacter ! '} imageUrl={vehicules}/>
             </div>
             <Footer/>
         </>

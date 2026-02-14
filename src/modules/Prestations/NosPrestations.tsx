@@ -17,8 +17,16 @@ import hitachi from "../../assets/img/hitachi.png";
 import mitsu from "../../assets/img/mitsu.png";
 import stiebel from "../../assets/img/Stiebel.png";
 import vim from "../../assets/img/VIM.png";
+import lg from "../../assets/img/lg.png";
+import panasonic from "../../assets/img/Panasonic.png";
+import manut_savigny from "../../assets/img/manut_savigny.jpg";
+import install from "../../assets/img/install.png";
 import deshumificateur from "../../assets/img/deshumidificateur.jpg";
 import video from "../../assets/videos/video.mp4";
+import fond from "../../assets/img/manutention.jpg";
+import vehicules from "../../assets/img/vehicules.png";
+import entretien from "../../assets/img/header_qualification.jpg";
+
 
 const NosPrestations: FC = () => {
     const location = useLocation();
@@ -43,7 +51,7 @@ const NosPrestations: FC = () => {
             titre: "Installation",
             sousTitre: "Votre confort, notre priorité toute l'année",
             texte: "Installation professionnelle de climatisation réversible et de pompe à chaleur. Nos experts interviennent pour concevoir, installer et régler votre climatisation et pompe à chaleur afin de garantir les performances énergétiques, un confort durable et des économies sur vos factures.",
-            imageUrl: deshumificateur,
+            imageUrl: install,
             titreModale:"Installation",
             soustitreModale:"« Une installation sur mesure pour un confort optimal »",
             texteModale:"Les installations TEMCI sont réalisées par le personnel de l’entreprise. Nos techniciens possèdent les diplômes et l'expérience nécessaire à la pose dans les règles de l’art du matériel de climatisation et de pompe à chaleur. Notre personnel intervenant possède les habilitations de manipulation des fluides frigorigènes et les habilitations électriques requises pour mener à bien tout projet de A à Z de sorte que les réglages, les essais, la mise en service et la réception des travaux sont réalisés par nos soins.",
@@ -52,7 +60,7 @@ const NosPrestations: FC = () => {
             titre: "Entretien",
             sousTitre: "Préservez votre confort et évitez les pannes coûteuses",
             texte: "Un entretien régulier est essentiel pour maintenir votre climatisation ou pompe à chaleur en parfait état de fonctionnement. Nous, Société TEMCI, à Morigny-Champigny, proposons un service d’entretien complet qui garantit une performance optimale, prolonge la durée de vie de votre équipement et vous fait réaliser des économies d’énergie.",
-            imageUrl: deshumificateur,
+            imageUrl: entretien,
             titreModale:"Entretien",
             soustitreModale:"« Un entretien régulier pour des performances durables »",
             texteModale:"La maintenance des installations est essentielle pour assurer la longévité et garantir le maintien des performances du matériel installé. La maintenance concourt aussi à la qualité de votre environnement intérieur. Les climatisations et pompes à chaleur sont des matériels complexes, où l’électronique, l’électricité, la thermodynamique sont à l’œuvre ; seul un personnel bien formé et expérimenté peut mener à bien les opérations de maintenance et détecter lors des visites préventives des dysfonctionnements potentiellement préjudiciables à terme. Dans la lutte contre le réchauffement climatique, le contrôle d’étanchéité des circuits frigorifiques est obligatoire à partir d’une certaine quantité, selon le fluide utilisé. Nos techniciens de maintenance sont parfaitement équipés et formés pour ces contrôles, et sont à même de délivrer un document CERFA attestant de l’étanchéité des installations.",
@@ -61,7 +69,7 @@ const NosPrestations: FC = () => {
             titre: "Dépannage",
             sousTitre: "Retrouvez votre confort en un temps record",
             texte: "Une panne de climatisation ou de pompe à chaleur ? Pas de panique ! Nous sommes là, la société TEMCI, intervient rapidement pour diagnostiquer et réparer votre installation. Grâce à notre expertise multi-marques, nous rétablissons votre confort et vous conseillons pour éviter toute récidive.",
-            imageUrl: deshumificateur,
+            imageUrl: manut_savigny,
             titreModale:"Dépannage",
             soustitreModale:"« Un dépannage rapide pour retrouver votre confort sans attendre »",
             texteModale:"Notre service après-vente concerne le dépannage des installations réalisées par la société TEMCI, qu’il y ait un contrat de maintenance en place ou pas. Les techniciens de la société TEMCI peuvent également intervenir sur des climatisations ou pompes à chaleur installées par un confrère, sous réserve que la période de garantie soit échue et qu’il n’y ait pas de conflit en cours avec l’installateur initial.",
@@ -76,7 +84,8 @@ const NosPrestations: FC = () => {
             <HeaderGenerique
                 titre="Nos prestations"
                 sousTitre="Explorez nos presations et trouvez la solution qui vous correspond"
-                image={deshumificateur}
+                image={fond}
+                position={"top"}
             />
 
             <div className="md:pt-24">
@@ -95,6 +104,13 @@ const NosPrestations: FC = () => {
                 ))}
             </div>
 
+            <PrestationVideo
+                titre="Remplacement d’une pompe à chaleur air/eau"
+                texte="Découvrez le remplacement d’une pompe à chaleur air/eau réalisé par nos équipes. Une installation moderne et performante, pensée pour améliorer le confort thermique, optimiser la consommation énergétique et garantir une solution durable adaptée au logement."
+                videoUrl={video}
+                position="ltr"
+            />
+
             <Localisation ref={localisationRef} />
 
             <Autoswiper
@@ -108,21 +124,15 @@ const NosPrestations: FC = () => {
                     mitsu,
                     stiebel,
                     vim,
+                    lg,
+                    panasonic
                 ]}
             />
 
             <ContactBanner
                 titre="Contactez nous"
                 texte="Une question ? Une demande de devis ? N'hésitez pas à nous contacter !"
-                imageUrl={deshumificateur}
-            />
-
-            <PrestationVideo
-                titre="Le titre associé à la démonstration vidéo"
-                sousTitre="Le sous-titre associé à la démonstration vidéo"
-                texte="Lorem ipsum dolor sit amet consectetur adipiscing elit mauris..."
-                videoUrl={video}
-                position="ltr"
+                imageUrl={vehicules}
             />
 
             <Footer />

@@ -5,7 +5,7 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ContactBanner from "../../components/ContactBanner";
 import deshumificateur from "../../assets/img/deshumidificateur.jpg";
-import manutention from "../../assets/img/manutention.jpg";
+import pac_coisnon from "../../assets/img/pac_coisnon.jpg";
 import Prestation from "../../components/Prestation";
 import akzonobel from '../../assets/img/clients/akzonobel.png';
 import axa from '../../assets/img/clients/axa.png';
@@ -27,8 +27,12 @@ import sicae from '../../assets/img/clients/sicae.png';
 import smurfit from '../../assets/img/clients/smurfit.png';
 import sycogest from '../../assets/img/clients/sycogest.png';
 import transportsDM from '../../assets/img/clients/transportsDM.png';
+import gestamp from '../../assets/img/clients/gestamp.png';
+import transdev from '../../assets/img/clients/transdev.png';
 import AutoSwiper from "../../components/Autoswiper";
 import LocalisationPin from "../../components/LocalisationPin";
+import vehicules from "../../assets/img/vehicules.png";
+
 
 
 
@@ -39,7 +43,6 @@ const Homepage: FC = () => {
         axa,
         bleu_libellule,
         camille_albane,
-        cerballiance,
         cerfrance,
         delpharm,
         dessange,
@@ -54,7 +57,8 @@ const Homepage: FC = () => {
         sicae,
         smurfit,
         sycogest,
-        transportsDM
+        transdev,
+        gestamp
     ];
 
     return (
@@ -65,15 +69,15 @@ const Homepage: FC = () => {
             <Prestation
                 titre={"Vous avez un projet ? Nous le réalisons."}
                 sousTitre={"Des solutions sur mesure pour votre confort thermique."}
-                texte={"Que ce soit pour votre maison, vos bureaux ou vos espaces industriels, notre équipe experte vous accompagne à chaque étape de votre projet, de l’étude personnalisée à l’installation complète. Nous concevons des solutions de climatisation sur mesure, alliant performance, efficacité énergétique et durabilité. Grâce à notre savoir-faire, vous bénéficiez d’un confort optimal toute l’année, d’un air pur et sain, et d’une tranquillité d’esprit totale. Respirez mieux, vivez mieux, et laissez-nous transformer vos besoins en solutions concrètes et fiables"}
-                imageUrl={manutention}
+                texte={"Que ce soit pour votre maison, vos bureaux ou vos espaces industriels, notre équipe experte vous accompagne à chaque étape de votre projet, de l’étude personnalisée à l’installation complète. Nous concevons des solutions de climatisation sur mesure, alliant performance, efficacité énergétique et durabilité. Grâce à notre savoir-faire, vous bénéficiez d’un confort optimal toute l’année, d’un air pur et sain, et d’une tranquillité d’esprit totale. Respirez mieux, vivez mieux, et laissez-nous transformer vos besoins en solutions concrètes et fiables."}
+                imageUrl={pac_coisnon}
                 position={'ltr'}
                 lien={'/prestations'}
                 label={'Voir nos prestations'}
             />
-            <AutoSwiper images={images} titre={'Ils nous ont fait confiance'}/>
-            <ContactBanner titre={'Vous cherchez un spécialiste pour votre climatisation ou pompe à chaleur ?'} texte={'N\'hésitez pas à nous contacter TEMCI, pour tous vos besoins d\'installation, dépannage et entretien de climatisation et pompe à chaleur'} imageUrl={deshumificateur}/>
             <LocalisationPin/>
+            <AutoSwiper images={images} titre={'Ils nous ont fait confiance'}/>
+            <ContactBanner titre={'Vous cherchez un spécialiste pour votre climatisation ou pompe à chaleur ?'} texte={'N\'hésitez pas à nous contacter TEMCI, pour tous vos besoins d\'installation, dépannage et entretien de climatisation et pompe à chaleur'} imageUrl={vehicules}/>
             <Footer/>
         </>
         

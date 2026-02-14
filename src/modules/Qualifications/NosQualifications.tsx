@@ -6,6 +6,13 @@ import Footer from "../../components/Footer";
 import HeaderGenerique from "../../components/HeaderGenerique";
 import ContactBanner from "../../components/ContactBanner";
 import deshumificateur from "../../assets/img/deshumidificateur.jpg";
+import vehicules from "../../assets/img/vehicules.png";
+import adc from "../../assets/img/adc.png";
+import qualipac from "../../assets/img/qualipac.png";
+import certif from "../../assets/img/certif.png";
+import attestation from "../../assets/pdf/attestation.pdf";
+import attestation_qualipac from "../../assets/pdf/qualipac.pdf";
+import header from "../../assets/img/entretien.jpg";
 
 const NosQualifications: FC = () => {
     return (
@@ -13,8 +20,9 @@ const NosQualifications: FC = () => {
             <Navbar />
             <HeaderGenerique
                 titre={"Nos qualifications"}
-                sousTitre={"« La reconnaissance d'un vrai savoir faire »"}
-                image={deshumificateur}
+                sousTitre={"La reconnaissance d'un vrai savoir faire"}
+                image={header}
+                position={'bottom'}
             />
             <div className="container flex flex-col md:flex-row py-6 md:py-12 overflow-x-hidden">
                 <div className="flex flex-col lg:grid lg:grid-cols-2 gap-y-4 gap-x-24">
@@ -52,12 +60,30 @@ const NosQualifications: FC = () => {
                             <img src={qualification} alt="Qualification TEMCI" className="" />
                         </div>
                     </motion.div>
+                    <div className="flex flex-col lg:flex-row gap-2 lg:gap-6 justify-center ">
+                        <a
+                            href={attestation}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex justify-center items-center px-6 py-3 font-semibold border border-[#b00000] bg-[#b00000] rounded-xl text-white hover:bg-white hover:text-[#b00000] transition-colors duration-300 cursor-pointer"
+                        >
+                            Voir notre attestation ADC Fluides
+                        </a>
+                        <a
+                            href={attestation_qualipac}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex justify-center items-center px-6 py-3 font-semibold border border-[#b00000] hover:bg-[#b00000] rounded-xl hover:text-white bg-white text-[#b00000] transition-colors duration-300 cursor-pointer"
+                        >
+                            Voir notre attestation Qualipac
+                        </a>
+                    </div>
                 </div>
             </div>
             <ContactBanner
                 titre={"Contactez nous"}
                 texte={"Une question ? Une demande de devis ? N'hésitez pas à nous contacter ! "}
-                imageUrl={deshumificateur}
+                imageUrl={vehicules}
             />
             <Footer />
         </>

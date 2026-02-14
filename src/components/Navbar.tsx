@@ -42,7 +42,7 @@ const Navbar: FC = () => {
             <div className="max-w-7xl mx-auto px-4 h-24 flex items-center justify-between">
                 {/* Logo */}
                 <div className="flex-shrink-0">
-                    <a href="/site_temci" className="cursor-pointer">
+                    <a href="/" className="cursor-pointer">
                         <img src={logo} alt="Logo" className="h-20 w-auto" />
                     </a>
                 </div>
@@ -50,11 +50,11 @@ const Navbar: FC = () => {
                 {/* Menu Desktop */}
                 <div className="hidden md:flex flex-1 justify-center">
                     <div className="flex space-x-14">
-                        <a href="/site_temci/materiel" className={`link-underline cursor-pointer ${isLinkActive("/materiel")}`}>Matériel</a>
-                        <a href="/site_temci/prestations" className={`link-underline cursor-pointer ${isLinkActive("/prestations")}`}>Nos Prestations</a>
-                        <a href="/site_temci/qualifications" className={`link-underline cursor-pointer ${isLinkActive("/qualifications")}`}>Qualifications</a>
-                        <a href="/site_temci/realisations" className={`link-underline cursor-pointer ${isLinkActive("/realisations")}`}>Nos Réalisations</a>
-                        <a href="/site_temci/contact" className={`link-underline cursor-pointer ${isLinkActive("/contact")}`}>Contact</a>
+                        <a href="/materiel" className={`link-underline cursor-pointer ${isLinkActive("/materiel")}`}>Matériel</a>
+                        <a href="/prestations" className={`link-underline cursor-pointer ${isLinkActive("/prestations")}`}>Nos Prestations</a>
+                        <a href="/qualifications" className={`link-underline cursor-pointer ${isLinkActive("/qualifications")}`}>Qualifications</a>
+                        <a href="/realisations" className={`link-underline cursor-pointer ${isLinkActive("/realisations")}`}>Nos Réalisations</a>
+                        <a href="/contact" className={`link-underline cursor-pointer ${isLinkActive("/contact")}`}>Contact</a>
                     </div>
                 </div>
 
@@ -70,7 +70,7 @@ const Navbar: FC = () => {
                         </a>
                     </div>
                     <a
-                        href="/site_temci/contact"
+                        href="/contact"
                         className="flex justify-center items-center px-4 py-1 font-semibold border border-[#b00000] bg-[#b00000] rounded-xl text-white hover:bg-white hover:text-[#b00000] transition-colors duration-300 cursor-pointer link-chevron"
                     >
                         Devis gratuit
@@ -107,37 +107,37 @@ const Navbar: FC = () => {
             {isMenuOpen && (
                 <div className="md:hidden bg-white px-4 pt-4 pb-6 space-y-4 shadow-md">
                     <a
-                        href="/site_temci/materiel"
+                        href="/materiel"
                         className={`block ${isLinkActive("/materiel")}`}
                     >
                         Matériel
                     </a>
                     <a
-                        href="/site_temci/prestations"
+                        href="/prestations"
                         className={`block ${isLinkActive("/prestations")}`}
                     >
                         Nos Prestations
                     </a>
                     <a
-                        href="/site_temci/qualifications"
+                        href="/qualifications"
                         className={`block ${isLinkActive("/qualifications")}`}
                     >
                         Qualifications
                     </a>
                     <a
-                        href="/site_temci/realisations"
+                        href="/realisations"
                         className={`block ${isLinkActive("/realisations")}`}
                     >
                         Nos Réalisations
                     </a>
                     <a
-                        href="/site_temci/contact"
+                        href="/contact"
                         className={`block ${isLinkActive("/realisations")}`}
                     >
                         Contact
                     </a>
                     <a
-                        href="/site_temci/contact"
+                        href="/contact"
                         className={`flex justify-center items-center px-4 py-1 font-semibold border border-[#b00000] bg-[#b00000] rounded-xl text-white hover:bg-white hover:text-[#b00000] transition-colors duration-300 cursor-pointer link-chevron`}
                     >
                         Devis gratuit

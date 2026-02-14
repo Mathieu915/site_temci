@@ -7,11 +7,12 @@ import NosPrestations from "./modules/Prestations/NosPrestations";
 import NosQualifications from "./modules/Qualifications/NosQualifications";
 import NousContacter from "./modules/NousContacter/NousContacter";
 import NosRealisations from "./modules/Realisations/NosRealisations";
+import MentionsLegales from "./modules/Mentions/MentionsLegales";
 
 
 function App() {
   return (
-    <Router basename="/site_temci">
+    <Router basename="/">
       <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/materiel" element={<Materiel />} />
@@ -19,6 +20,7 @@ function App() {
           <Route path="/qualifications" element={<NosQualifications />} />
           <Route path="/realisations" element={<NosRealisations />} />
           <Route path="/contact" element={<NousContacter />} />
+          <Route path="/mentions-legales" element={<MentionsLegales />} />
       </Routes>
     </Router>
   );

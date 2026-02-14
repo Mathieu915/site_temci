@@ -32,7 +32,7 @@ const ContactBanner: React.FC<BannerProps> = ({ titre, texte, imageUrl }) => {
                         onClick={() => navigate("/contact")}
                         className="bg-transparent border border-white text-white font-semibold rounded-md overflow-hidden group transition inline-flex items-center px-6 py-3 whitespace-nowrap hover:px-8"
                     >
-                        <a href="/site_temci/contact" className="flex items-center gap-2">
+                        <a href="/contact" className="flex items-center gap-2">
                             Contactez-nous
                             <span className="text-2xl transform -translate-x-2 opacity-0 w-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 group-hover:pr-2">
                                 →
